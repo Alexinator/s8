@@ -18,7 +18,6 @@ class Db
             ));
             $this->_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $this->_db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
-            die('ok: connecté ');
         } 
 		catch (PDOException $e) {
 		    die('Erreur de connexion à la base de données ici: '.$e->getMessage());
