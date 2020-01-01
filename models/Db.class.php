@@ -13,11 +13,11 @@ class Db
             console.log('Connexion okay');
         } 
 		catch (PDOException $e) {
-		    die('Erreur de connexion à la base de données : '.$e->getMessage());
+		    die('Erreur de connexion à la base de données ici: '.$e->getMessage());
         }
 
 		catch (PDOException $e) {
-		    die('Erreur de connexion à la base de données : '.$e->getMessage());
+		    die('Erreur de connexion à la base de données las bas: '.$e->getMessage());
         }
     }
 
