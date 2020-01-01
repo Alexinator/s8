@@ -6,9 +6,8 @@ class Db
 
     private function __construct()
     {
-        /*
         try {
-            $this->_db = new PDO('mysql:host=localhost;dbname=bdbn;charset=utf8', 'root', '');
+            $this->_db = new PDO('mysql:host=ec2-46-137-188-105.eu-west-1.compute.amazonaws.com;dbname=d8rr751nf80vnc;charset=utf8', 'bmtmuxnraprspi', '497b6089f9579eda567c2e63aea1fce147a026f3e1a9359837f71181137760ca');
             $this->_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			$this->_db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
         } 
@@ -19,7 +18,6 @@ class Db
 		catch (PDOException $e) {
 		    die('Erreur de connexion à la base de données : '.$e->getMessage());
         }
-        */
     }
 
 	# Pattern Singleton
