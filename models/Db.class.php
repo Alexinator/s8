@@ -7,6 +7,7 @@ class Db
     private function __construct()
     {
         try {
+            
             $db = parse_url(getenv("postgres://bmtmuxnraprspi:497b6089f9579eda567c2e63aea1fce147a026f3e1a9359837f71181137760ca@ec2-46-137-188-105.eu-west-1.compute.amazonaws.com:5432/d8rr751nf80vnc"));
             $this->_db = new PDO("pgsql:" . sprintf(
                 "host=%s;port=%s;user=%s;password=%s;dbname=%s",
