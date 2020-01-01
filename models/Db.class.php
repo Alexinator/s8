@@ -7,7 +7,15 @@ class Db
     private function __construct()
     {
         try {
-            $this->_db = new PDO('pgsql:host=ec2-46-137-188-105.eu-west-1.compute.amazonaws.com;dbname=d8rr751nf80vnc;port=5432', 'bmtmuxnraprspi', '497b6089f9579eda567c2e63aea1fce147a026f3e1a9359837f71181137760ca');
+            $db = parse_url(getenv("postgres://bmtmuxnraprspi:497b6089f9579eda567c2e63aea1fce147a026f3e1a9359837f71181137760ca@ec2-46-137-188-105.eu-west-1.compute.amazonaws.com:5432/d8rr751nf80vnc"));
+            $this->_db = new PDO("pgsql:" . sprintf(
+                "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+                $db["host"],
+                $db["port"],
+                $db["user"],
+                $db["pass"],
+                ltrim($db["path"], "/")
+            ));
             $this->_db->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             $this->_db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_OBJ);
             console.log('Connexion okay');
